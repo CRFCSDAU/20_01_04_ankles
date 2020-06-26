@@ -43,9 +43,8 @@
     factor(levels = c("Cast", "Boot"))
   
 # table(data$arm)
-  expect_equal(table(data$arm)[[1]], table(data$arm)[[2]])               # QUERY
-# This had a block randomization with block size of 20. "Lucky" to get exactly
-# 80:80   
+  expect_equal(table(data$arm)[[1]], table(data$arm)[[2]])               
+   
   
 # Consent
   
@@ -94,7 +93,7 @@
   
   # sum_plot("omas")
 
-  # 
+  # Missing values
   # map(
   #   select(data, arm, contains("omas")), 
   #   function(x)table(is.na(x))
@@ -184,7 +183,8 @@
   
   
 # The time needed to return to work in days ----
-  
+# This doesn't actually seem to be measured in days. Pretty messy overall. 
+# At a glance though, more boots were back to work at 6 weeks than casts.   
   # names(select(data, starts_with("return")))
   
   data <- rename(
